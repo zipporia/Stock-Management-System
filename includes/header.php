@@ -13,7 +13,7 @@
     <!--bootstrap theme-->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-theme.min.css">
     <!--font awesome-->
-    <link rel="stylesheet" href="assets/font-awesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
     <!-- custom css-->
     <link rel="stylesheet" href="custom/css/custom.css">
     <!-- dataTables -->
@@ -39,13 +39,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#">Zipporia Company</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li id="navDashboard"><a href="index.php"> <i class="glyphicon glyphicon-list-alt"></i> Dashboard </a></li>
+                
+                <ul class="nav navbar-nav navbar-right" id="navSetting">
+                <li id="navDashboard"><a href="index.php"> <i class="glyphicon glyphicon-list-alt"></i> Dashboard </a></li>
                     <li id="navBrand"><a href="brand.php"> <i class="glyphicon glyphicon-btc"></i> Brand </a></li>
                     <li id="navCategories"><a href="categories.php"> <i class="glyphicon glyphicon-th-list"></i> Category </a></li>
                     
@@ -57,8 +58,7 @@
                     </ul>
                     </li>
                     <li id="navReport"><a href="report.php"> <i class="glyphicon glyphicon-check"></i> Report </a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right" id="navSetting">
+
                     <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
                     <ul class="dropdown-menu">

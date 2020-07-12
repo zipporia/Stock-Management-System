@@ -12,15 +12,78 @@
             <div class="panel-body">
                 <div class="remove-messages"></div>
 
-                <div class="div-action">
-                    <button class="btn btn-default"> <i class="glyphicon glyphicon-plus-sign"></i> Add Brand</button>
+                <div class="div-action pull pull-right" style="padding-bottom:20px;">
+                    <button class="btn btn-default" data-toggle="modal" data-target="#addBrandModal"> <i class="glyphicon glyphicon-plus-sign"></i> Add Brand</button>
                 </div> <!-- /div-action -->
+
+                <table class="table" id="manageBrandTable">
+                    <thead>
+                        <tr>
+                            <th>Brand Name</th>
+                            <th>Status</th>
+                            <th style="width:15%;">Option</th>
+                        </tr>
+                    </thead>
+                </table>  
             </div>
         </div>
 
     </div> <!-- /col-md-12 -->
 </div> <!-- /row -->
 
+<div class="modal fade" tabindex="-1" role="dialog" id="addBrandModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"> <i class="fa fa-plus"></i> Add Brand </h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="editBrandModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"> <i class="fa fa-plus"></i> Edit Brand</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" id="createBrandBtn" data-loading-text="Loading...">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="removeBrandModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"> <i class="glyphicon glyphicon-trash"></i> Remove Brand </h4>
+      </div>
+      <div class="modal-body">
+        <p>Do you really want to remove ? </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
+        <button type="button" class="btn btn-primary"> <i class="glyphicon glyphicon-ok-sign"></i> Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 
