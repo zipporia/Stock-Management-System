@@ -3,6 +3,10 @@
 
     session_start();
 
+    if(isset($_SESSION['userId'])){
+        header('Location: dashboard.php');
+    }
+
     $errors = array();
 
     if($_POST){
