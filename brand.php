@@ -43,6 +43,8 @@
 
         <div class="modal-body">
 
+        <div id="add-brand-messages"></div>
+
           <div class="form-group">
             <label for="brandName" class="col-sm-3 control-label">Brand Name : </label>
             <div class="col-sm-9">

@@ -8,6 +8,11 @@ $(document).ready(function(){
 
     // submit brand form function
     $("#submitBrandForm").unbind('submit').on('submit', function(){
+
+        // remove the error text
+        $(".text-danger").remove();
+        // remove the form error
+        $(".form-group").removeClass("has-error").removeClass('has-success');
         
         var brandName = $('#brandName').val();
         var brandStatus =$('#brandStatus').val();
@@ -48,11 +53,28 @@ $(document).ready(function(){
                     if(response.success = true){
                         // reload the manage member table
                         manageBrandTAble.ajax.reload(null, false);
-                    }
+
+                        //reset the form text
+                        $("submitBrandForm")[0].reset();
+                        //remove the error text
+                        $(".text-danger").remove();
+                        // remove the form error
+                        $(".form-group").removeClass('has-error').removeClass('has-success');
+
+                        $("#add-brand-messages").html('<div class="alert alert-success>' +  
+                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                            '<strong> <i class="glyphicon glyphicon-ok-sign"></i></strong>' + resonse.messages +
+                        '</div>');
+
+                        $(".alert-success").delay(500).show(10, function(){
+                            $(this).delay(3000).hide(10, function(){
+                                $(this).remove();
+                            });
+                        });// /.alert
+                    } // 
                 }
             });
         }
-
         return false;
     });
 
