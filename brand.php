@@ -39,8 +39,10 @@
         <h4 class="modal-title"> <i class="fa fa-plus"></i> Add Brand </h4>
       </div>
 
-      <form class="form-horizontal">
+      <form class="form-horizontal" id="submitBrandForm" action="php_action/createBrand.php" method="POST">
+
         <div class="modal-body">
+
           <div class="form-group">
             <label for="brandName" class="col-sm-3 control-label">Brand Name : </label>
             <div class="col-sm-9">
@@ -57,6 +59,7 @@
               </select>
             </div>
           </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -76,13 +79,36 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title"> <i class="fa fa-plus"></i> Edit Brand</h4>
       </div>
+
+      <form class="form-horizontal" id="editBrandForm" action="php_action/editBrand.php" method="POST">
+
       <div class="modal-body">
-        <p>One fine body&hellip;</p>
+
+      <div class="form-group">
+            <label for="editBrandName" class="col-sm-3 control-label">Brand Name : </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="editBrandName" namd="editBrandName" placeholder="Brand Name" autocomplete="off">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="editbrandStatus" class="col-sm-3 control-label">Status : </label>
+            <div class="col-sm-9">
+              <select class="form-control" id="editbrandStatus" name="editbrandStatus">
+                <option value="">~~SELECT~~</option>
+                <option value="1">Available</option>
+                <option value="2">Not Available</option>
+              </select>
+            </div>
+          </div>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id="createBrandBtn" data-loading-text="Loading...">Save changes</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
+
+      </form>
+
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
