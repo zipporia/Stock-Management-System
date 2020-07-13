@@ -46,7 +46,7 @@
           <div class="form-group">
             <label for="brandName" class="col-sm-3 control-label">Brand Name : </label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="brandName" namd="brandName" placeholder="Brand Name" autocomplete="off">
+              <input type="text" class="form-control" id="brandName" name="brandName" placeholder="Brand Name" autocomplete="off">
             </div>
           </div>
           <div class="form-group">
@@ -63,7 +63,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </form>
 
@@ -87,7 +87,7 @@
       <div class="form-group">
             <label for="editBrandName" class="col-sm-3 control-label">Brand Name : </label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="editBrandName" namd="editBrandName" placeholder="Brand Name" autocomplete="off">
+              <input type="text" class="form-control" id="editBrandName" name="editBrandName" placeholder="Brand Name" autocomplete="off">
             </div>
           </div>
           <div class="form-group">
@@ -131,6 +131,6 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
+<script src="custom/js/brand.js"></script>
 
 <?php require_once 'includes/footer.php'; ?>
