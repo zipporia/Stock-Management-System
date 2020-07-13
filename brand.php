@@ -38,16 +38,36 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title"> <i class="fa fa-plus"></i> Add Brand </h4>
       </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+
+      <form class="form-horizontal">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="brandName" class="col-sm-3 control-label">Brand Name : </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="brandName" namd="brandName" placeholder="Brand Name" autocomplete="off">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="brandStatus" class="col-sm-3 control-label">Status : </label>
+            <div class="col-sm-9">
+              <select class="form-control" id="brandStatus" name="brandStatus">
+                <option value="">~~SELECT~~</option>
+                <option value="1">Available</option>
+                <option value="2">Not Available</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
 
 <div class="modal fade" tabindex="-1" role="dialog" id="editBrandModal">
   <div class="modal-dialog" role="document">
