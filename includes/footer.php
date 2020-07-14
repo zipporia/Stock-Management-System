@@ -8,6 +8,7 @@
     <script src="assets/plugins/fileinput/js/fileinput.min.js"></script>
     <!-- datatables js -->
     <script src="assets/plugins/datatables/datatables.min.js"></script>
+    
 
 </body>
 </html>
