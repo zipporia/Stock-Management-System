@@ -7,8 +7,18 @@ $valid['success'] = array('success' => false, 'messages' => array());
 $brandId = $_POST['brandId'];
 
 if($brandId){
-    $valid['success'] = true;
-    $valid['messages'] = "Successfully Removed";
+
+    $sql = "UPDATE brands SET brand_status = 2 WHERE brand_id = {$brandId}";
+
+        if($conn->query($sql) === TRUE){
+            $valid['success'] = true;
+            $valid['messages'] = "Successfully Removed";
+        }else{
+            $valid['success'] = false;
+            $valid['messages'] = "Error while removing the brand";
+        } 
+       $conn->close();
+        echo json_encode($valid);
+
 }
 
-echo json_encode($valid);
