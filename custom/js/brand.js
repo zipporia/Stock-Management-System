@@ -78,6 +78,15 @@ $(document).ready(function(){
             });
         }
         return false;
-    });
+    }); // submit brand form function
 
-});
+}); 
+
+
+function removeBrands(brandId = null){
+        if(brandId){
+            $("#removeBrandBtn").unbind('click').bind('click', function(){
+                alert(brandId);
+            });
+        }
+    }
