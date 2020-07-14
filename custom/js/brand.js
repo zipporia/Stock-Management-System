@@ -99,6 +99,17 @@ function removeBrands(brandId = null){
 
                             // reload the brand table
                             manageBrandTable.ajax.reload(null, false);
+
+                            $(".remove-messages").html('<div class="alert alert-success">'+  
+                                '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
+                                '<strong> <i class="glyphicon glyphicon-ok-sign"></i> </strong> '+ response.messages +
+                            '</div>');
+
+                            $(".alert-success").delay(500).show(10, function(){
+                                $(this).delay(3000).hide(10, function(){
+                                    $(this).remove();
+                                });
+                            });// /.alert
                         }
                     }
                 })
