@@ -86,7 +86,22 @@ $(document).ready(function(){
 function removeBrands(brandId = null){
         if(brandId){
             $("#removeBrandBtn").unbind('click').bind('click', function(){
-                alert(brandId);
+                $.ajax({
+                    url: 'php_action/removeBrand.php',
+                    type: 'post',
+                    data: {brandId : brandId},
+                    dataType: 'json',
+                    success: function(response){
+                        if(response.success == true){
+
+                            // hide the modal
+                            $("#removeBrandModal").modal('hide');
+
+                            // reload the brand table
+                            manageBrandTable.ajax.reload(null, false);
+                        }
+                    }
+                })
             });
         }
     }
