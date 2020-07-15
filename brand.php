@@ -85,6 +85,7 @@
       <form class="form-horizontal" id="editBrandForm" action="php_action/editBrand.php" method="POST">
 
       <div class="modal-body">
+      <div class="edit-brand-messages"></div>
 
       <div class="form-group">
             <label for="editBrandName" class="col-sm-3 control-label">Brand Name : </label>
