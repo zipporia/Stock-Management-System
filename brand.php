@@ -93,9 +93,9 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="editbrandStatus" class="col-sm-3 control-label">Status : </label>
+            <label for="editBrandStatus" class="col-sm-3 control-label">Status : </label>
             <div class="col-sm-9">
-              <select class="form-control" id="editbrandStatus" name="editbrandStatus">
+              <select class="form-control" id="editBrandStatus" name="editBrandStatus">
                 <option value="">~~SELECT~~</option>
                 <option value="1">Available</option>
                 <option value="2">Not Available</option>

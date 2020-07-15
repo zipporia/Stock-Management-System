@@ -92,10 +92,11 @@ function editBrands(brandId = null){
     
         $.ajax({
             url: 'php_action/fetchSelectedBrand.php',
+            type: 'post',
             data: {brandId : brandId},
             dataType: 'json',
             success: function(response){
-                $("#editBrandForm").val(response.brand_name);
+                $("#editBrandName").val(response.brand_name);
                 $("#editBrandStatus").val(response.brand_active);
             } // success
         }); // ajax
