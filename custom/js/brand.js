@@ -88,7 +88,7 @@ function editBrands(brandId = null){
         // refresh the form
         $("#editBrandForm")[0].reset();
 
-        $(".editBrandFooter").after('<input type="text" name="brandId" id="brandId" value="'+brandId+'" >');
+        $(".editBrandFooter").after('<input type="hidden" name="brandId" id="brandId" value="'+brandId+'" >');
     
         $.ajax({
             url: 'php_action/fetchSelectedBrand.php',
