@@ -79,9 +79,28 @@ $(document).ready(function(){
         }
         return false;
     }); // submit brand form function
-
 }); 
 
+function editBrands(brandId = null){
+    if(brandId){
+        // remove brandId
+        $("#brandId").remove();
+        // refresh the form
+        $("#editBrandForm")[0].reset();
+
+        $(".editBrandFooter").after('<input type="text" name="brandId" id="brandId" value="'+brandId+'" >');
+    
+        $.ajax({
+            url: 'php_action/fetchSelectedBrand.php',
+            data: {brandId : brandId},
+            dataType: 'json',
+            success: function(response){
+                $("#editBrandForm").val(response.brand_name);
+                $("#editBrandStatus").val(response.brand_active);
+            } // success
+        }); // ajax
+    }
+}
 
 function removeBrands(brandId = null){
         if(brandId){
