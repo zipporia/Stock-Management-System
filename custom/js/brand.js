@@ -87,6 +87,10 @@ function editBrands(brandId = null){
         $("#brandId").remove();
         // refresh the form
         $("#editBrandForm")[0].reset();
+        // remove text
+        $(".text-danger").remove();
+        // remove form error
+        $(".form-group").removeClass('has-error'). removeClass('has-success');
 
         $(".editBrandFooter").after('<input type="hidden" name="brandId" id="brandId" value="'+brandId+'" >');
     
