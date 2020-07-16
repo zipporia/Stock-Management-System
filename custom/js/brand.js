@@ -153,7 +153,7 @@ function editBrands(brandId = null){
                                     // remove the form error
                                     $(".form-group").removeClass('has-error').removeClass('has-success');
 
-                                    $(".edit-brand-messages").html('<div class="alert alert-success">'+  
+                                    $("#edit-brand-messages").html('<div class="alert alert-success">'+  
                                         '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
                                         '<strong> <i class="glyphicon glyphicon-ok-sign"></i> </strong> '+ response.messages +
                                     '</div>');
