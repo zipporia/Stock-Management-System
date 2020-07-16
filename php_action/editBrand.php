@@ -11,6 +11,16 @@
 
         $sql = "UPDATE brands SET brand_name = '$brandName', brand_active = '$brandStatus' WHERE brand_id = '$brandId'";
         
-    
+        if($conn->query($sql) === TRUE){
+            $valid['success'] = true;
+            $valid['messages'] = "Successfully Updated";
+        }else{
+            $valid['success'] = false;
+            $valid['messages'] = "Error while updating the brand";
+        }
+
+        $conn->close();
+
+        echo json_encode($valid);
 
     }
