@@ -9,13 +9,18 @@ $(document).ready(function(){
         'order' : []
     });
 
+    
+}); 
+
+function addBrand(){
+    $("#submitBrandForm")[0].reset();
+    //remove the error text
+    $(".text-danger").remove();
+    // remove the form error
+    $(".form-group").removeClass('has-error').removeClass('has-success');
+
     // submit brand form function
     $("#submitBrandForm").unbind('submit').on('submit', function(){
-
-        // remove the error text
-        $(".text-danger").remove();
-        // remove the form error
-        $(".form-group").removeClass("has-error").removeClass('has-success');
         
         var brandName = $('#brandName').val();
         var brandStatus =$('#brandStatus').val();
@@ -79,7 +84,7 @@ $(document).ready(function(){
         }
         return false;
     }); // submit brand form function
-}); 
+}
 
 function editBrands(brandId = null){
     if(brandId){

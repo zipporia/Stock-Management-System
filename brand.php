@@ -13,7 +13,7 @@
                 <div class="remove-messages"></div>
 
                 <div class="div-action pull pull-right" style="padding-bottom:20px;">
-                    <button class="btn btn-default" data-toggle="modal" data-target="#addBrandModal"> <i class="glyphicon glyphicon-plus-sign"></i> Add Brand</button>
+                    <button class="btn btn-default" data-toggle="modal" data-target="#addBrandModal" onclick="addBrand()"> <i class="glyphicon glyphicon-plus-sign"></i> Add Brand</button>
                 </div> <!-- /div-action -->
 
                 <table class="table" id="manageBrandTable">
