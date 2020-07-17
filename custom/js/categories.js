@@ -8,6 +8,13 @@ $(document).ready(function(){
 
     // on click on submit categories form modal
     $("#addCategoriesModalBtn").unbind('click').bind('click', function(){
+        // reset the form text
+        $("#submitCategoriesForm")[0].reset();
+        //remove the error text
+        $(".text-danger").remove();
+        // remove the form errror
+        $(".form-group").removeClass('has-error').removeClass('has-success');
+
         $("#submitCategoriesForm").unbind('submit').bind('submit', function(){
             var categoriesName = $("#categoriesName").val();
             var categoriesStatus = $("#categoriesStatus").val();
@@ -20,7 +27,16 @@ $(document).ready(function(){
                 $("#categoriesName").find('.text-danger').remove();
                 // success  out of form
                 $('#categoriesName').closest('.form-group').addClass('has-success')
+            }
 
+            if(categoriesStatus == ""){
+                $("#categoriesStatus").after('<p calss="text-danger">Categories Status Field is required</p>');
+                $("#categoriesStatus").closest('.form-group').addClass('has-error');
+            } else{
+                // remove error text field
+                $("#categoriesStatus").find('.text-danger').remove();
+                // success  out of form
+                $('#categoriesStatus').closest('.form-group').addClass('has-success')
             }
 
             return false;
