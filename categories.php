@@ -109,4 +109,6 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<script src="custom/js/categories.js"></script>
+
 <?php require_once 'includes/footer.php'; ?>
