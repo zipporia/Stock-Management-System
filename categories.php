@@ -14,7 +14,7 @@
                 <div class="remove-messages"></div>
 
                 <div class="div-action pull pull-right" style="padding-bottom:20px";>
-                    <button Class="btn btn-default" data-toggle="modal" id="addCategoriesModalBtn" data-target="#addCategoriesModal"> <i class="glyphicon glyphicon-plus-sign"></i> Add Categories </button>
+                    <button Class="btn btn-default" data-toggle="modal" id="addCategoriesModalBtn" data-target="#addCategoriesModal" id="addCategoriesModalBtn"> <i class="glyphicon glyphicon-plus-sign"></i> Add Categories </button>
                 </div>
 
                 <table class="table" id="manageCategoriesTable">
