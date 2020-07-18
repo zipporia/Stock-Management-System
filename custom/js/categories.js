@@ -19,15 +19,15 @@ $(document).ready(function(){
         $("#submitCategoriesForm").unbind('submit').bind('submit', function(){
 
             //remove the error text
-        $(".text-danger").remove();
-        // remove the form errror
-        $(".form-group").removeClass('has-error').removeClass('has-success');
+            $(".text-danger").remove();
+            // remove the form errror
+            $(".form-group").removeClass('has-error').removeClass('has-success');
 
             var categoriesName = $("#categoriesName").val();
             var categoriesStatus = $("#categoriesStatus").val();
 
             if(categoriesName == ""){
-                $("#categoriesName").after('<p calss="text-danger">Categories Name Field is required</p>');
+                $("#categoriesName").after('<p class="text-danger">Categories Name Field is required</p>');
                 $("#categoriesName").closest('.form-group').addClass('has-error');
             } else{
                 // remove error text field
@@ -37,7 +37,7 @@ $(document).ready(function(){
             }
 
             if(categoriesStatus == ""){
-                $("#categoriesStatus").after('<p calss="text-danger">Categories Status Field is required</p>');
+                $("#categoriesStatus").after('<p class="text-danger">Categories Status Field is required</p>');
                 $("#categoriesStatus").closest('.form-group').addClass('has-error');
             } else{
                 // remove error text field
