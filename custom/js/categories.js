@@ -8,6 +8,7 @@ $(document).ready(function(){
 
     // on click on submit categories form modal
     $("#addCategoriesModalBtn").unbind('click').bind('click', function(){
+
         // reset the form text
         $("#submitCategoriesForm")[0].reset();
         //remove the error text
@@ -16,6 +17,12 @@ $(document).ready(function(){
         $(".form-group").removeClass('has-error').removeClass('has-success');
 
         $("#submitCategoriesForm").unbind('submit').bind('submit', function(){
+
+            //remove the error text
+        $(".text-danger").remove();
+        // remove the form errror
+        $(".form-group").removeClass('has-error').removeClass('has-success');
+
             var categoriesName = $("#categoriesName").val();
             var categoriesStatus = $("#categoriesStatus").val();
 

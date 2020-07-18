@@ -8,11 +8,10 @@ $(document).ready(function(){
         'ajax' : 'php_action/fetchBrand.php',
         'order' : []
     });
-
-    
 }); 
 
 function addBrand(){
+    
     $("#submitBrandForm")[0].reset();
     //remove the error text
     $(".text-danger").remove();
@@ -21,6 +20,10 @@ function addBrand(){
 
     // submit brand form function
     $("#submitBrandForm").unbind('submit').on('submit', function(){
+
+        $(".text-danger").remove();
+        // remove the form error
+        $(".form-group").removeClass('has-error').removeClass('has-success');
         
         var brandName = $('#brandName').val();
         var brandStatus =$('#brandStatus').val();
@@ -78,7 +81,7 @@ function addBrand(){
                                 $(this).remove();
                             });
                         });// /.alert
-                    } // 
+                    } // if
                 }
             });
         }

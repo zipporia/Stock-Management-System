@@ -43,7 +43,7 @@
 
         <div class="modal-body">
 
-        <div id="add-brand-messages"></div>
+          <div id="add-brand-messages"></div>
 
           <div class="form-group">
             <label for="brandName" class="col-sm-3 control-label">Brand Name : </label>
@@ -63,10 +63,12 @@
           </div>
 
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary" id="createBrandBtn" data-loading-text="Loading...">Save changes</button>
         </div>
+
       </form>
 
     </div><!-- /.modal-content -->
@@ -84,31 +86,33 @@
 
       <form class="form-horizontal" id="editBrandForm" action="php_action/editBrand.php" method="POST">
 
-      <div class="modal-body">
-      <div id="edit-brand-messages"></div>
+            <div class="modal-body">
 
-      <div class="form-group">
-            <label for="editBrandName" class="col-sm-3 control-label">Brand Name : </label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="editBrandName" name="editBrandName" placeholder="Brand Name" autocomplete="off">
+              <div id="edit-brand-messages"></div>
+
+              <div class="form-group">
+                <label for="editBrandName" class="col-sm-3 control-label">Brand Name : </label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="editBrandName" name="editBrandName" placeholder="Brand Name" autocomplete="off">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="editBrandStatus" class="col-sm-3 control-label">Status : </label>
+                <div class="col-sm-9">
+                  <select class="form-control" id="editBrandStatus" name="editBrandStatus">
+                    <option value="">~~SELECT~~</option>
+                    <option value="1">Available</option>
+                    <option value="2">Not Available</option>
+                  </select>
+                </div>
+              </div>
+
             </div>
+
+          <div class="modal-footer editBrandFooter">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
           </div>
-          <div class="form-group">
-            <label for="editBrandStatus" class="col-sm-3 control-label">Status : </label>
-            <div class="col-sm-9">
-              <select class="form-control" id="editBrandStatus" name="editBrandStatus">
-                <option value="">~~SELECT~~</option>
-                <option value="1">Available</option>
-                <option value="2">Not Available</option>
-              </select>
-            </div>
-          </div>
-        
-      </div>
-      <div class="modal-footer editBrandFooter">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-      </div>
 
       </form>
 
