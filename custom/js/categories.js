@@ -4,7 +4,10 @@ $(document).ready(function(){
     // active top navbar categories
     $("#navCategories").addClass('active');
 
-    manageCategoriesTable = $('#manageCategoriesTable').DataTable(); // manage categories datatable
+    manageCategoriesTable = $('#manageCategoriesTable').DataTable({
+        'ajax' : 'php_action/fetchCategories.php',
+        'order' : []
+    }); // manage categories datatable
 
     // on click on submit categories form modal
     $("#addCategoriesModalBtn").unbind('click').bind('click', function(){
@@ -56,9 +59,10 @@ $(document).ready(function(){
                     dataType: 'json',
                     success: function(response){
                         if(response.success == true){
+                            
                             // reload the manage member data table
                             manageCategoriesTable.ajax.reload(null, false);
-
+                            
                             // reset the form text
                             $("#submitCategoriesForm")[0].reset();
                             // remove the error text
@@ -86,3 +90,29 @@ $(document).ready(function(){
         }); // submit categories form function
     }); // on click on submit categories form modal
 }); // document
+
+function removeCategories(categoriesId = null){
+    if(categoriesId){
+        $("#removeCategoriesBtn").unbind('click').bind("click", function(){
+            $.ajax({
+                url: 'php_action/removeCategories.php',
+                type: 'post',
+                data:   {categoriesId: categoriesId},
+                dataType: 'json',
+                success: function(response){
+                    if(response.success == true){
+                        // close the modal
+                        $("#removeCategoriesModal").modal('hide');
+                        // update the manage categories table
+                        manageCategoriesTable.ajax.reload(null, false);
+                        // show the message
+                        $("#remove-messages").html('<div class="alert alert-warning alert-dismissible" role="alert">' +
+                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                            '<strong> <i class="glyphicon glyphicon-ok-sign"></i></strong>' + response.messages +
+                        '</div>');
+                    }
+                }
+            });
+        });
+    } // if categories id
+} // remove categories function
