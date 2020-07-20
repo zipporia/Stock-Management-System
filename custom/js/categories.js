@@ -110,6 +110,15 @@ function removeCategories(categoriesId = null){
                             '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
                             '<strong> <i class="glyphicon glyphicon-ok-sign"></i></strong>' + response.messages +
                         '</div>');
+                    }else{
+                        // close the modal
+                        $("#removeCategoriesModal").modal('hide');
+                        // show the message
+                        $("#remove-messages").html('<div class="alert alert-warning alert-dismissible" role="alert">' +
+                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                            '<strong> <i class="glyphicon glyphicon-exclamation-sign"></i></strong>' + response.messages +
+                        '</div>');
+
                     }
                 }
             });
