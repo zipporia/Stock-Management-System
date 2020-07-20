@@ -44,6 +44,8 @@
         <form class="form-horizontal" id="submitCategoriesForm" action="php_action/createCategories.php" method="POST">
 
             <div class="modal-body">
+
+              <div id="add-categories-messages"></div>
         
                 <div class="form-group">
                     <label for="categoriesName" class="col-sm-4 control-label">Categories Name : </label>
