@@ -28,7 +28,7 @@ if($result->num_rows > 0) {
                 </button>
                 <ul class="dropdown-menu">
                     <li><a type="button"> <i class="glyphicon glyphicon-edit"></i> Edit </a></li>
-                    <li><a type="button"> <i class="glyphicon glyphicon-trash"></i> Remove </a></li>
+                    <li><a type="button" data-toggle="modal" data-target="#removeCategoriesModal" id="removeCategoriesModalBtn" onclick="removeCategories('.$categoriesId.')"> <i class="glyphicon glyphicon-trash"></i> Remove </a></li>
                 </ul>
             </div>';
 
