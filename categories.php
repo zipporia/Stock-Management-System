@@ -11,7 +11,7 @@
             <div class="panel-heading"> <i class="glyphicon glyphicon-edit"></i> Manage Categories</div>
             <div class="panel-body">
 
-                <div class="remove-messages"></div>
+                <div id="remove-messages"></div>
 
                 <div class="div-action pull pull-right" style="padding-bottom:20px";>
                     <button Class="btn btn-default" data-toggle="modal" id="addCategoriesModalBtn" data-target="#addCategoriesModal" id="addCategoriesModalBtn"> <i class="glyphicon glyphicon-plus-sign"></i> Add Categories </button>
@@ -110,6 +110,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
 
 <script src="custom/js/categories.js"></script>
 

@@ -1,8 +1,8 @@
 <?php
 
-require 'core.php';
+require_once 'core.php';
 
-$valid['success'] = array('success') => false, 'message' => array());
+$valid['success'] = array('success' => false, 'messages' => array());
 
 $categoriesId = $_POST['categoriesId'];
 
