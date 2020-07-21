@@ -107,9 +107,9 @@
           </div>
 
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer editCategoriesFooter">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
 
       </form>

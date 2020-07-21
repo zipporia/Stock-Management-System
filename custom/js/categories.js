@@ -94,6 +94,19 @@ $(document).ready(function(){
 // update categories function
 function editCategories(categoriesId = null){
     if(categoriesId){
+
+        // remove the categoreis id
+        $("#editCategoriesId").remove();
+        // reset the form text
+        $("#editCategoriesForm")[0].reset();
+        // remove the error text
+        $(".text-danger").remove();
+        // remove the form error 
+        $(".form-group").removeClass("has-error").removeClass("has-success");
+
+        // edit categories messages remove
+        
+
         $.ajax({
             url: 'php_action/fetchSelectedCategories.php',
             type: 'post',
@@ -103,10 +116,84 @@ function editCategories(categoriesId = null){
                 $("#editCategoriesName").val(response.category_name);
                 $("#editCategoriesStatus").val(response.category_active);
 
+                $(".editCategoriesFooter").after('<input type="hidden" name="editCategoriesId" id="editCategoriesId" value="'+response.category_id+'">');
+                
+                // submit of edit categories form
+                $("#editCategoriesForm").unbind('submit').bind('submit', function(){
+
+                    //remove the error text
+                    $(".text-danger").remove();
+                    // remove the form errror
+                    $(".form-group").removeClass('has-error').removeClass('has-success');
+        
+                    var editCategoriesName = $("#editCategoriesName").val();
+                    var editCategoriesStatus = $("#editCategoriesStatus").val();
+        
+                    if(editCategoriesName == ""){
+                        $("#editCategoriesName").after('<p class="text-danger">Categories Name Field is required</p>');
+                        $("#editCategoriesName").closest('.form-group').addClass('has-error');
+                    } else{
+                        // remove error text field
+                        $("#editCategoriesName").find('.text-danger').remove();
+                        // success  out of form
+                        $('#editCategoriesName').closest('.form-group').addClass('has-success')
+                    }
+        
+                    if(editCategoriesStatus == ""){
+                        $("#editCategoriesStatus").after('<p class="text-danger">Categories Status Field is required</p>');
+                        $("#editCategoriesStatus").closest('.form-group').addClass('has-error');
+                    } else{
+                        // remove error text field
+                        $("#editCategoriesStatus").find('.text-danger').remove();
+                        // success  out of form
+                        $('#editCategoriesStatus').closest('.form-group').addClass('has-success')
+                    }
+        
+                    if(editCategoriesName && editCategoriesStatus){
+                        var form = $(this);
+        
+                        $.ajax({
+                            url: form.attr("action"),
+                            type: form.attr("method"),
+                            data: form.serialize(),
+                            dataType: 'json',
+                            success: function(response){
+                                if(response.success == true){
+                                    
+                                    // reload the manage member data table
+                                    manageCategoriesTable.ajax.reload(null, false);
+                                    
+                                    // reset the form text
+                                    $("#editCategoriesForm")[0].reset();
+                                    // remove the error text
+                                    $(".text-danger").remove();
+                                    // remove the form error
+                                    $(".form-group").removeClass('has-error').removeClass('has-success');
+                                    
+                                    $("#edit-categories-messages").html('<div class="alert alert-success alert-dismissible" role="alert">' +
+                                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                                            '<strong> <i class="glyphicon glyphicon-ok-sign"></i> </strong>' + response.messages +
+                                    '</div>');
+        
+                                    // remove the messages after 10 sec
+                                    $('.alert-success').delay(500).show(10, function(){
+                                        $(this).delay(3000).hide(10, function(){
+                                            $(this).remove();
+                                        });
+                                    });
+                                } // if response
+                            } // success
+                        }); // ajax
+                    } // if 
+        
+                    return false;
+                }); // submit categories form function
+
+
             } // success
-        });
-    }
-}
+        }); // ajax function to fetch selected categories
+    } // if
+} // update categories function
 
 function removeCategories(categoriesId = null){
     if(categoriesId){
