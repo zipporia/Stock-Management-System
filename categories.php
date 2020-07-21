@@ -56,11 +56,11 @@
                 <div class="form-group">
                     <label for="categoriesStatus" class="col-sm-4 control-label">Status : </label>
                     <div class="col-sm-8">
-                    <select class="form-control" name="categoriesStatus" id="categoriesStatus">
-                        <option value="">~~SELECT~~</option>
-                        <option value="1">Available</option>
-                        <option value="2">Not Available</option>
-                    </select>
+                      <select class="form-control" name="categoriesStatus" id="categoriesStatus">
+                          <option value="">~~SELECT~~</option>
+                          <option value="1">Available</option>
+                          <option value="2">Not Available</option>
+                      </select>
                     </div>
                 </div>
             </div>
@@ -75,20 +75,45 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<div class="modal fade" tabindex="-1" role="dialog">
+<div class="modal fade" tabindex="-1" role="dialog" id="editCategoriesModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
+        <h4 class="modal-title"> <i class="fa fa-edit"></i> Edit Categories </h4>
       </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+
+      <form class="form-horizontal" id="editCategoriesForm" action="php_action/editCategories.php" method="POST">
+
+        <div class="modal-body">
+
+        <div id="edit-categories-messages"></div>
+          
+          <div class="form-group">
+              <label for="editCategoriesName" class="col-sm-4 control-label">Categories Name : </label>
+              <div class="col-sm-8">
+              <input type="text" class="form-control" id="editCategoriesName" name="editCategoriesName" placeholder="Categories Name">
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="editCategoriesStatus" class="col-sm-4 control-label">Status : </label>
+              <div class="col-sm-8">
+                <select class="form-control" name="editCategoriesStatus" id="editCategoriesStatus">
+                    <option value="">~~SELECT~~</option>
+                    <option value="1">Available</option>
+                    <option value="2">Not Available</option>
+                </select>
+              </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+
+      </form>
+      
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -98,7 +123,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"> <i class="glyphicon glyphicon-trash"></i> Remove Brand</h4>
+        <h4 class="modal-title"> <i class="glyphicon glyphicon-trash"></i> Remove Categories </h4>
       </div>
       <div class="modal-body">
         <p>Do you really want to remove?</p>
