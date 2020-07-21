@@ -105,7 +105,7 @@ function editCategories(categoriesId = null){
         $(".form-group").removeClass("has-error").removeClass("has-success");
 
         // edit categories messages remove
-        
+        $("#edit-categories-messages").html("");
 
         $.ajax({
             url: 'php_action/fetchSelectedCategories.php',
