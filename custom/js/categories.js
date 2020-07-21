@@ -95,15 +95,13 @@ $(document).ready(function(){
 function editCategories(categoriesId = null){
     if(categoriesId){
         $.ajax({
-            url: 'php_action/fetchSelectedCategories',
+            url: 'php_action/fetchSelectedCategories.php',
             type: 'post',
             data: {categoriesId: categoriesId},
             dataType: 'json',
             success: function(response){
-                $("#editCategoriesName").val(response.categories_name);
-                $("#editCategoriesStatus").val(response.categories_active);
-
-                
+                $("#editCategoriesName").val(response.category_name);
+                $("#editCategoriesStatus").val(response.category_active);
 
             } // success
         });
