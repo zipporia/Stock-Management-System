@@ -91,6 +91,25 @@ $(document).ready(function(){
     }); // on click on submit categories form modal
 }); // document
 
+// update categories function
+function editCategories(categoriesId = null){
+    if(categoriesId){
+        $.ajax({
+            url: 'php_action/fetchSelectedCategories',
+            type: 'post',
+            data: {categoriesId: categoriesId},
+            dataType: 'json',
+            success: function(response){
+                $("#editCategoriesName").val(response.categories_name);
+                $("#editCategoriesStatus").val(response.categories_active);
+
+                
+
+            } // success
+        });
+    }
+}
+
 function removeCategories(categoriesId = null){
     if(categoriesId){
         $("#removeCategoriesBtn").unbind('click').bind("click", function(){
