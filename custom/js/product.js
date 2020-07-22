@@ -11,7 +11,7 @@ $(document).ready(function(){
         removeTitle: 'Cancel or reset changes',
         elErrorContainer: '#kv-avatar-errors-1',
         msgErrorClass: 'alert alert-block alert-danger',
-        defaultPreviewContent: '<img src="assets/images/photo_default.png" alt="Your Avatar" style="height:200px">',
+        defaultPreviewContent: '<img src="assets/images/product_default.jpg" alt="Your Avatar" style="height:250px;">',
         layoutTemplates: {main2: '{preview} {remove} {browse}'},
         allowedFileExtensions: ["jpg", "png", "gif"]
     });
