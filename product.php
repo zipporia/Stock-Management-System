@@ -54,7 +54,10 @@
             <div class="form-group">
                 <label for="" class="col-sm-3 control-label">Product Image : </label>
                 <div class="col-sm-9">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    <div id="kv-avatar-errors-1" class="center-block" style="display:none"></div>
+                    <div class="kv-avatar center-block">
+                        <input id="productImage" name="productImage" type="file" class="file-loading"">
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -143,5 +146,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<script src="custom/js/product.js"></script>
 
 <?php require_once 'includes/footer.php'; ?>
