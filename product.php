@@ -82,7 +82,7 @@
                 <label for="brandName" class="col-sm-3 control-label">Brand Name : </label>
                 <div class="col-sm-9">
                     <select class="form-control" name="brandName" id="brandName">
-                        <option value="">SELECT</option>
+                        <option value="">SELECT BRAND</option>
                         <?php
                             $sql = "SELECT brand_id, brand_name FROM brands WHERE brand_status = 1 AND brand_active = 1";
                             $result = $conn->query($sql);
@@ -94,15 +94,25 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Category name : </label>
+                <label for="categoryName" class="col-sm-3 control-label">Category name : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="" name="" placeholder="Category name">
+                    <select class="form-control" name="categoryName" id="categoryName">
+                        <option value="">SELECT CATEGORY</option>
+                        <?php
+                            $sql = "SELECT category_id, category_name FROM categories WHERE category_status = 1 AND category_active = 1";
+                            $result = $conn->query($sql);
+                            while ($row = $result->fetch_array()){
+                                echo "<option value='".$row[0]."'>".$row[1]."</option>";
+                            }
+                            
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Status : </label>
+                <label for="productStatus" class="col-sm-3 control-label">Status : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="" name="" placeholder="Status">
+                <input type="password" class="form-control" id="status" name="status" placeholder="Status">
                 </div>
             </div>
         </div>
