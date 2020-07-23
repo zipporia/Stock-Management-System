@@ -13,7 +13,7 @@
                 <div class="remove-messages"></div>
 
                 <div class="div-action pull pull-right" style="padding-bottom: 20px;">
-                    <button class="btn - btn-default" data-toggle="modal" data-target="#addProductModal"> <i class="glyphicon glyphicon-plus-sign"></i> Add Product</button>
+                    <button class="btn - btn-default" data-toggle="modal" data-target="#addProductModal" id="addProductModalBtn"> <i class="glyphicon glyphicon-plus-sign"></i> Add Product</button>
                 </div>
 
                 <table class="table" id="manageProductTable">
@@ -68,9 +68,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="quantity" class="col-sm-3 control-label">Quality : </label>
+                <label for="quantity" class="col-sm-3 control-label">Quantity : </label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quality">
+                <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quantity">
                 </div>
             </div>
             <div class="form-group">
