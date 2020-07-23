@@ -3,10 +3,12 @@ var manageProductTable;
 $(document).ready(function(){
 
     $("#navProduct").addClass('active');
-
+    // manage product datatable
     manageProductTable = $('#manageProductTable').DataTable();
-
+    // add product modal btn clicked
     $("#addProductModalBtn").unbind('click').bind('click', function(){
+        // product form reset
+        $("#submitProductForm")[0].reset();
         
         $("#productImage").fileinput({
             overwriteInitial: true,
@@ -24,5 +26,5 @@ $(document).ready(function(){
             layoutTemplates: {main2: '{preview} {remove} {browse}'},
             allowedFileExtensions: ["jpg", "png", "gif"]
         });
-    });
+    }); // add product modal btn clicked
 });
