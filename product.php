@@ -61,39 +61,48 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Product name : </label>
+                <label for="productName" class="col-sm-3 control-label">Product name : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="" name="" placeholder="">
+                <input type="password" class="form-control" id="" name="" placeholder="Product name">
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Quality : </label>
+                <label for="quantity" class="col-sm-3 control-label">Quality : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="" name="" placeholder="">
+                <input type="password" class="form-control" id="quantity" name="quantity" placeholder="Quality">
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Rate : </label>
+                <label for="rate" class="col-sm-3 control-label">Rate : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="" name="" placeholder="">
+                <input type="password" class="form-control" id="rate" name="rate" placeholder="Rate">
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Brand Name : </label>
+                <label for="brandName" class="col-sm-3 control-label">Brand Name : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="" name="" placeholder="">
+                    <select class="form-control" name="brandName" id="brandName">
+                        <option value="">SELECT</option>
+                        <?php
+                            $sql = "SELECT brand_id, brand_name FROM brands WHERE brand_status = 1 AND brand_active = 1";
+                            $result = $conn->query($sql);
+                            while($row = $result->fetch_array()){
+                                echo "<option value='".$row[0]."'>".$row[1]."</option>";
+                            }
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
                 <label for="" class="col-sm-3 control-label">Category name : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="" name="" placeholder="">
+                <input type="password" class="form-control" id="" name="" placeholder="Category name">
                 </div>
             </div>
             <div class="form-group">
                 <label for="" class="col-sm-3 control-label">Status : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="" name="" placeholder="">
+                <input type="password" class="form-control" id="" name="" placeholder="Status">
                 </div>
             </div>
         </div>
