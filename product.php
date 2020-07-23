@@ -54,7 +54,7 @@
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-3 control-label">Product Image : </label>
                 <div class="col-sm-9">
-                
+
                     <div id="kv-avatar-errors-1" class="center-block" style="width:800px;display:none"></div>
                     <div class="kv-avatar center-block">
                         <input id="productImage" name="productImage" type="file" class="file-loading"">
@@ -64,19 +64,19 @@
             <div class="form-group">
                 <label for="productName" class="col-sm-3 control-label">Product name : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="productName" name="productName" placeholder="Product name">
+                <input type="text" class="form-control" id="productName" name="productName" placeholder="Product name">
                 </div>
             </div>
             <div class="form-group">
                 <label for="quantity" class="col-sm-3 control-label">Quality : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="quantity" name="quantity" placeholder="Quality">
+                <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quality">
                 </div>
             </div>
             <div class="form-group">
                 <label for="rate" class="col-sm-3 control-label">Rate : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="rate" name="rate" placeholder="Rate">
+                <input type="text" class="form-control" id="rate" name="rate" placeholder="Rate">
                 </div>
             </div>
             <div class="form-group">
