@@ -47,13 +47,14 @@
         <h4 class="modal-title"> <i class="fa fa-plus"></i> Add Product </h4>
       </div>
         
-    <form class="form-horizontal"><!-- Modal Form-->
+    <form class="form-horizontal" id="submitProductForm" action="php_action/createProduct.php" method="post" enctype="multipart/form-data"><!-- Modal Form-->
         
-        <div class="modal-body"><!-- modal Body-->
+        <div class="modal-body" style="max-height:450px;overflow:auto;"><!-- modal Body-->
         
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Product Image : </label>
+                <label for="inputEmail3" class="col-sm-3 control-label">Product Image : </label>
                 <div class="col-sm-9">
+                
                     <div id="kv-avatar-errors-1" class="center-block" style="width:800px;display:none"></div>
                     <div class="kv-avatar center-block">
                         <input id="productImage" name="productImage" type="file" class="file-loading"">
@@ -63,7 +64,7 @@
             <div class="form-group">
                 <label for="productName" class="col-sm-3 control-label">Product name : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="" name="" placeholder="Product name">
+                <input type="password" class="form-control" id="productName" name="productName" placeholder="Product name">
                 </div>
             </div>
             <div class="form-group">
@@ -104,7 +105,6 @@
                             while ($row = $result->fetch_array()){
                                 echo "<option value='".$row[0]."'>".$row[1]."</option>";
                             }
-                            
                         ?>
                     </select>
                 </div>
@@ -112,7 +112,11 @@
             <div class="form-group">
                 <label for="productStatus" class="col-sm-3 control-label">Status : </label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" id="status" name="status" placeholder="Status">
+                    <select class="form-control" name="productStatus" id="productStatus">
+                        <option value="">SELECT STATUS</option>
+                        <option value="1">Available</option>
+                        <option value="2">Not Available</option>
+                    </select>
                 </div>
             </div>
         </div>
