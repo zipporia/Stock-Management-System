@@ -50,7 +50,9 @@
     <form class="form-horizontal" id="submitProductForm" action="php_action/createProduct.php" method="post" enctype="multipart/form-data"><!-- Modal Form-->
         
         <div class="modal-body" style="max-height:450px;overflow:auto;"><!-- modal Body-->
-        
+
+            <div id="add-product-messages"></div>
+
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-3 control-label">Product Image : </label>
                 <div class="col-sm-9">

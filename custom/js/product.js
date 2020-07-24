@@ -119,7 +119,21 @@ $(document).ready(function(){
                     processData: false,
                     success:function(response){
                         if(response.success === TRUE){
-                            alert(dataType);
+                            
+                            // reset the form
+                            $("#submitProductForm")[0].reset();
+
+                            $("#add-product-messages").html('<div class="alert alert-success alert-dismissible" role="alert">' +
+                                '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                                '<strong> <i class="glyphicon glyphicon-ok-sign"></i> </strong>' + response.messages +
+                            '</div>');
+
+                            // reload the manage product table
+                            manageProductTable.ajax.reload(null, false);
+                            //remove the error text
+                            $(".text-danger").remove();
+                            // remove the form error
+                            $(".form-group").removeClass('has-error').removeClass('has-success');
                         }
                         
                     }
