@@ -9,6 +9,10 @@ $(document).ready(function(){
     $("#addProductModalBtn").unbind('click').bind('click', function(){
         // product form reset
         $("#submitProductForm")[0].reset();
+        // remove error text
+        $('.text-danger').remove();
+        // remove error red color and success green color
+        $('.form-group').removeClass('has-error').removeClass('has-success');
         
         $("#productImage").fileinput({
             overwriteInitial: true,
@@ -29,6 +33,13 @@ $(document).ready(function(){
 
         // submit product form
         $("#submitProductForm").unbind('submit').bind('submit', function(){
+
+            // remove error text
+            $('.text-danger').remove();
+            // remove error red color and success green color
+            $('.form-group').removeClass('has-error').removeClass('has-success');
+
+            // variables
             var productImage = $("#productImage").val();
             var productName = $("#productName").val();
             var quantity = $("#quantity").val();
@@ -93,6 +104,7 @@ $(document).ready(function(){
                 $("#productStatus").closest('.form-group').addClass('has-success');
             }
 
+            
             
 
             return false;

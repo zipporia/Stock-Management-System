@@ -57,7 +57,7 @@
 
                     <div id="kv-avatar-errors-1" class="center-block" style="width:800px;display:none"></div>
                     <div class="kv-avatar center-block">
-                        <input id="productImage" name="productImage" type="file" class="file-loading"">
+                        <input id="productImage" name="productImage" type="file" class="file-loading">
                     </div>
                 </div>
             </div>
