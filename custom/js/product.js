@@ -118,8 +118,7 @@ $(document).ready(function(){
                     contentType: false,
                     processData: false,
                     success:function(response){
-                        if(response.success === TRUE){
-                            
+                        if(response.success == true){
                             // reset the form
                             $("#submitProductForm")[0].reset();
 
