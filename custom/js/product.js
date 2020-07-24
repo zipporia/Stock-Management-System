@@ -104,7 +104,27 @@ $(document).ready(function(){
                 $("#productStatus").closest('.form-group').addClass('has-success');
             }
 
-            
+            if(productImage && productName && quantity && rate && brandName && categoryName && productStatus){
+                
+                var form = $(this);
+                var formData = new FormData(this);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    type: form.attr('method'),
+                    data: formData,
+                    dataType: 'json',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success:function(response){
+                        if(response.success === TRUE){
+                            alert(dataType);
+                        }
+                        
+                    }
+                });
+            }
             
 
             return false;
