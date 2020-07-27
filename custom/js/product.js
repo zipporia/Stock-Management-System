@@ -4,9 +4,12 @@ $(document).ready(function(){
 
     $("#navProduct").addClass('active');
     // manage product datatable
-    manageProductTable = $('#manageProductTable').DataTable();
+    manageProductTable = $('#manageProductTable').DataTable({
+        'ajax': 'php_action/fetchProduct.php',
+        'order' : []
+    });
 
-    
+
     // add product modal btn clicked
     $("#addProductModalBtn").unbind('click').bind('click', function(){
         // product form reset
