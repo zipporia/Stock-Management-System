@@ -5,6 +5,8 @@ $(document).ready(function(){
     $("#navProduct").addClass('active');
     // manage product datatable
     manageProductTable = $('#manageProductTable').DataTable();
+
+    
     // add product modal btn clicked
     $("#addProductModalBtn").unbind('click').bind('click', function(){
         // product form reset
