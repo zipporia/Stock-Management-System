@@ -160,10 +160,11 @@ function removeProduct(productId = null){
                data: {productId: productId},
                dataType: 'json',
                success: function(response){
-                    if(response.success == true){
 
-                        // close the product modal
-                        $("#removeProductModal").modal('hide');
+                    // close the product modal
+                    $("#removeProductModal").modal('hide');
+
+                    if(response.success == true){
 
                         // update the product table
                         manageProductTable.ajax.reload(null, false);
