@@ -148,4 +148,41 @@ $(document).ready(function(){
             return false;
         }); // submit product form
     }); // add product modal btn clicked
-});
+}); // document
+
+function removeProduct(productId = null){
+    if(productId){
+        // remove product button clicked
+        $("#removeProductBtn").unbind('click').bind('click', function(){
+           $.ajax({
+               url: 'php_action/removeProduct.php',
+               type: 'post',
+               data: {productId: productId},
+               dataType: 'json',
+               success: function(response){
+                    if(response.success == true){
+
+                        // close the product modal
+                        $("#removeProductModal").modal('hide');
+
+                        // update the product table
+                        manageProductTable.ajax.reload(null, false);
+
+                        // remove success message
+                        $(".remove-messages").html('<div class="alert alert-success alert-dismissible" role="alert"> '+
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> ' +
+                        '<strong> <i class="glyphicon glyphicon-ok-sign"></i></strong>' + response.messages +
+                      '</div>');
+                    } else{
+                        // remove success message
+                        $(".remove-messages").html('<div class="alert alert-warning alert-dismissible" role="alert"> '+
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> ' +
+                        '<strong> <i class="glyphicon glyphicon-exclamation-sign"></i></strong>' + response.messages +
+                      '</div>');
+
+                    }
+               } // success
+           }); // $.ajax
+        }); // remove product button clicked
+    }
+}
