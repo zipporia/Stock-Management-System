@@ -159,7 +159,8 @@
                 <!-- photo -->
                 <div role="tabpanel" class="tab-pane " id="productInfo">
                     <br>
-                    <form class="form-horizontal">
+                    <!-- Edit Product Form -->
+                    <form class="form-horizontal" id="editProductForm" action="php_action/editProduct.php" method="POST">
                         <div class="form-group">
                             <label for="editProductName" class="col-sm-3 control-label">Product Name : </label>
                             <div class="col-sm-9">
@@ -221,6 +222,11 @@
                             </div>
                         </div>
                     
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+
                     </form>
 
                 </div>
@@ -230,8 +236,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

@@ -153,7 +153,15 @@ $(document).ready(function(){
 // edit product
 function editProduct(productId = null){
     if(productId){
-        alert(productId);
+        $.ajax({
+            url: 'php_action/fetchSelectedProduct.php',
+            type: 'post',
+            data: {productId: productId},
+            dataType: 'json',
+            success: function(response){
+
+            }
+        });
     }
 }
 
