@@ -165,8 +165,8 @@
                             <label for="editProductName" class="col-sm-3 control-label">Product Name : </label>
                             <div class="col-sm-9">
                             <input type="text" class="form-control" id="editProductName" name="editProductName" placeholder="Product Name">
+                         </div>
                             </div>
-                        </div>
                         <div class="form-group">
                             <label for="editQuantity" class="col-sm-3 control-label">Quantity : </label>
                             <div class="col-sm-9">
@@ -174,9 +174,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="eidtRate" class="col-sm-3 control-label">Rate : </label>
+                            <label for="editRate" class="col-sm-3 control-label">Rate : </label>
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" id="eidtRate" name="eidtRate" placeholder="Rate">
+                            <input type="text" class="form-control" id="editRate" name="editRate" placeholder="Rate">
                             </div>
                         </div>
                         <div class="form-group">
@@ -222,13 +222,13 @@
                             </div>
                         </div>
                     
-                    <div class="modal-footer">
+                    <div class="modal-footer editProductFooter">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
 
                     </form>
-
+                                        
                 </div>
                 <!-- product info -->
             </div>
