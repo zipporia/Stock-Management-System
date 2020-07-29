@@ -182,7 +182,7 @@
                             <label for="editBrandName" class="col-sm-3 control-label">Brand Name : </label>
                             <div class="col-sm-9">
                                 <select class="form-control" id="editBrandName" name="editBrandName">
-                                    <option value=""> SELECT BRAND NAME</option>
+                                    <option value=""> SELECT BRAND </option>
                                     <?php
                                         $sql = "SELECT brand_id, brand_name FROM brands WHERE brand_status = 1 AND brand_active = 1";
                                         $result = $conn->query($sql);
@@ -192,6 +192,32 @@
                                         }
                                     ?>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="editCategoryName" class="col-sm-3 control-label">Category Name : </label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="editCategoryName" name="editCategoryName">
+                                    <option value=""> SELECT CATEGORY </option>
+                                    <?php
+                                        $sql = "SELECT category_id, category_name FROM categories WHERE category_active = 1 AND category_status = 1";
+                                        $result = $conn->query($sql);
+
+                                        while($row = $result->fetch_array()){
+                                            echo "<option value='".$row[0]."'>".$row[1]."</option>";
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProductStatus" class="col-sm-3 control-label">Status : </label>
+                            <div class="col-sm-9">
+                            <select class="form-control" id="editProductStatus" name="editProductStatus">
+                                <option value=""> SELECT STATUS</option>
+                                <option value="1">Available</option>
+                                <option value="2">Not Available</option>
+                            </select>
                             </div>
                         </div>
                     
