@@ -140,10 +140,68 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
+        <h4 class="modal-title"> <i class="fa fa-edit"></i> Edit Product</h4>
       </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
+      <div class="modal-body" style="height:450px;overflow:auto;">
+        
+        <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#photo" aria-controls="home" role="tab" data-toggle="tab">Photo</a></li>
+                <li role="presentation"><a href="#productInfo" aria-controls="profile" role="tab" data-toggle="tab">Product Info</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="photo">
+                
+                </div>
+                <!-- photo -->
+                <div role="tabpanel" class="tab-pane " id="productInfo">
+                    <br>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="editProductName" class="col-sm-3 control-label">Product Name : </label>
+                            <div class="col-sm-9">
+                            <input type="text" class="form-control" id="editProductName" name="editProductName" placeholder="Product Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="editQuantity" class="col-sm-3 control-label">Quantity : </label>
+                            <div class="col-sm-9">
+                            <input type="text" class="form-control" id="editQuantity" name="editQuantity" placeholder="Quantity">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="eidtRate" class="col-sm-3 control-label">Rate : </label>
+                            <div class="col-sm-9">
+                            <input type="text" class="form-control" id="eidtRate" name="eidtRate" placeholder="Rate">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="editBrandName" class="col-sm-3 control-label">Brand Name : </label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="editBrandName" name="editBrandName">
+                                    <option value=""> SELECT BRAND NAME</option>
+                                    <?php
+                                        $sql = "SELECT brand_id, brand_name FROM brands WHERE brand_status = 1 AND brand_active = 1";
+                                        $result = $conn->query($sql);
+
+                                        while($row = $result->fetch_array()){
+                                            echo "<option value='".$row[0]."'>".$row[1]."</option>";
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    
+                    </form>
+
+                </div>
+                <!-- product info -->
+            </div>
+        </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

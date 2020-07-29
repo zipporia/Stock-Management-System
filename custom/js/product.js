@@ -150,6 +150,13 @@ $(document).ready(function(){
     }); // add product modal btn clicked
 }); // document
 
+// edit product
+function editProduct(productId = null){
+    if(productId){
+        alert(productId);
+    }
+}
+
 function removeProduct(productId = null){
     if(productId){
         // remove product button clicked
@@ -180,10 +187,9 @@ function removeProduct(productId = null){
                         '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> ' +
                         '<strong> <i class="glyphicon glyphicon-exclamation-sign"></i></strong>' + response.messages +
                       '</div>');
-
                     }
                } // success
            }); // $.ajax
         }); // remove product button clicked
     }
-}
+} // remove product
