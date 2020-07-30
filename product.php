@@ -159,6 +159,9 @@
                 <!-- photo -->
                 <div role="tabpanel" class="tab-pane " id="productInfo">
                     <br>
+
+                    <div id="edit-product-message"></div>
+
                     <!-- Edit Product Form -->
                     <form class="form-horizontal" id="editProductForm" action="php_action/editProduct.php" method="POST">
                         <div class="form-group">

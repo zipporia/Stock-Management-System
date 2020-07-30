@@ -126,6 +126,8 @@ $(document).ready(function(){
                             // reset the form
                             $("#submitProductForm")[0].reset();
 
+                            $("html, body, div.modal, div.modal-content, div.modal-body").animate({scrollTop: '0'}, 100);
+
                             $("#add-product-messages").html('<div class="alert alert-success alert-dismissible" role="alert">' +
                                 '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
                                 '<strong> <i class="glyphicon glyphicon-ok-sign"></i> </strong>' + response.messages +
@@ -169,7 +171,7 @@ function editProduct(productId = null){
                 $("#editRate").val(response.product_rate);
                 $("#editBrandName").val(response.pbrand_id);
                 $("#editCategoryName").val(response.pcategory_id);
-				$("#editProductStatus").val(response.product_status);
+				$("#editProductStatus").val(response.product_active);
 				
 				// update the product data function
 				$(".editProductFooter").append('<input type="hidden" name="productId" id="productId" value="'+response.product_id+'"/>');
@@ -238,8 +240,33 @@ function editProduct(productId = null){
 					}
 
 					if(productName && quantity && rate && brandName && categoryName && productStatus){
+                        var form = $(this);
 
-					}
+                        $.ajax({
+                            url: form.attr('action'),
+                            type: form.attr('method'),
+                            data: form.serialize(),
+                            dataType: 'json',
+                            success: function(response){
+                                if(response.success == true){
+                                    $("html, body, div.modal, div.modal-content, div.modal-body").animate({scrollTop: '0'}, 100);
+                                
+                                    $("#edit-product-message").html('<div class="alert alert-success alert-dismissible" role="alert">' +
+                                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                                        '<strong> <i class="glyphicon glyphicon-ok-sign"></i> </strong>' + response.messages +
+                                    '</div>');
+
+                                    // reload the manage product table
+                                    manageProductTable.ajax.reload(null, true);
+
+                                    // remove error text
+                                    $('.text-danger').remove();
+                                    // remove error red color and success green color
+                                    $('.form-group').removeClass('has-error').removeClass('has-success');
+                                }
+                            }
+                        });
+					} // if
 					
 					return false;
 				}); // update the product data function
