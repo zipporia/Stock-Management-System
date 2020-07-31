@@ -194,7 +194,8 @@ function editProduct(productId = null){
 				$("#editProductStatus").val(response.product_active);
 				
 				// update the product data function
-				$(".editProductFooter").append('<input type="hidden" name="productId" id="productId" value="'+response.product_id+'"/>');
+                $(".editProductFooter").append('<input type="hidden" name="productId" id="productId" value="'+response.product_id+'"/>');
+                $(".editProductPhotoFooter").append('<input type="hidden" name="productId" id="productId" value="'+response.product_id+'"/>');
 				// update the product data function
 				$("#editProductForm").unbind('submit').bind('submit', function(){
 					// remove error text

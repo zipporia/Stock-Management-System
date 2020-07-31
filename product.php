@@ -156,7 +156,7 @@
                 <div role="tabpanel" class="tab-pane active" id="photo">
                 
                 <!-- form photo-->
-                    <form class="form-horizontal" action="php_action/editProductImage.php" method="POST" id="updateProductImageForm" enctype="multipart/form-data">
+                    <form class="form-horizontal" id="updateProductImageForm" action="php_action/editProductImage.php" method="post" enctype="multipart/form-data">
                     <br>
                     <div class="edit-productPhoto-message"></div>
                         <div class="form-group">
@@ -176,7 +176,7 @@
                             </div>
                         </div>
 
-                        <div class="modal-footer">
+                        <div class="modal-footer editProductPhotoFooter">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Save changes</button>
                         </div>
