@@ -196,6 +196,66 @@ function editProduct(productId = null){
 				// update the product data function
                 $(".editProductFooter").append('<input type="hidden" name="productId" id="productId" value="'+response.product_id+'"/>');
                 $(".editProductPhotoFooter").append('<input type="hidden" name="productId" id="productId" value="'+response.product_id+'"/>');
+
+                $("#updateProductImageForm").unbind('submit').bind('submit', function(){
+                    var productImage = $("#editProductImage").val();
+
+                    if(productImage == ""){
+                        $("#editProductImage").closest('.center-block').after('<p class="text-danger">The Product Image field is required</p>');
+                        $("#editProductImage").closest('.form-group').addClass('has-error');
+                    }else{
+                        $("#editProductImage").find('.text-danger').remove();
+                        $("#editProductImage").closest('.form-group').addClass('has-success');
+                    }
+
+                    if(productImage){
+                       var form = $(this);
+                       var formData = new FormData(this);
+
+                        $.ajax({
+                            url: form.attr('action'),
+                            type: form.attr('method'),
+                            data: formData,
+                            dataType: 'json',
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            success: function(response){
+                                if(response.success == true){
+
+                                    $("html, body, div.modal, div.modal-content, div.modal-body").animate({scrollTop: '0'}, 100);
+
+                                    $("#edit-productPhoto-message").html('<div class="alert alert-success alert-dismissible" role="alert">' +
+                                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                                        '<strong> <i class="glyphicon glyphicon-ok-sign"></i> </strong>' + response.messages +
+                                    '</div>');
+
+                                    // reload the manage student table
+                                    manageProductTable.ajax.reload(null, true);
+
+                                    $(".fileinput-remove-button").click();
+
+                                    $.ajax({
+                                        url: 'php_action/fetchProductImageUrl.php?i='+productId,
+                                        type: 'post',
+                                        success:function(response){
+                                            $("#getProductImage").attr('src', 'stock/'+response.product_image);
+
+                                            // remove error text
+                                            $('.text-danger').remove();
+                                            // remove error red color and success green color
+                                            $('.form-group').removeClass('has-error').removeClass('has-success');
+                                        }
+                                    });// $.ajax
+
+                                } // if
+                            } // success
+                       }); // $.ajax
+                    } // if
+
+                    return false;
+                });
+
 				// update the product data function
 				$("#editProductForm").unbind('submit').bind('submit', function(){
 					// remove error text

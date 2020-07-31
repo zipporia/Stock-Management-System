@@ -158,7 +158,7 @@
                 <!-- form photo-->
                     <form class="form-horizontal" id="updateProductImageForm" action="php_action/editProductImage.php" method="post" enctype="multipart/form-data">
                     <br>
-                    <div class="edit-productPhoto-message"></div>
+                    <div id="edit-productPhoto-message"></div>
                         <div class="form-group">
                             <label for="getProductImage" class="col-sm-3 control-label">Product Image</label>
                             <div class="col-sm-9">
