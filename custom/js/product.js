@@ -198,6 +198,12 @@ function editProduct(productId = null){
                 $(".editProductPhotoFooter").append('<input type="hidden" name="productId" id="productId" value="'+response.product_id+'"/>');
 
                 $("#updateProductImageForm").unbind('submit').bind('submit', function(){
+
+                    // remove error text
+                    $('.text-danger').remove();
+                    // remove error red color and success green color
+                    $('.form-group').removeClass('has-error').removeClass('has-success');
+
                     var productImage = $("#editProductImage").val();
 
                     if(productImage == ""){
@@ -222,6 +228,11 @@ function editProduct(productId = null){
                             processData: false,
                             success: function(response){
                                 if(response.success == true){
+                                    
+                                    // remove error text
+                                    $('.text-danger').remove();
+                                    // remove error red color and success green color
+                                    $('.form-group').removeClass('has-error').removeClass('has-success');
 
                                     $("html, body, div.modal, div.modal-content, div.modal-body").animate({scrollTop: '0'}, 100);
 
@@ -239,12 +250,8 @@ function editProduct(productId = null){
                                         url: 'php_action/fetchProductImageUrl.php?i='+productId,
                                         type: 'post',
                                         success:function(response){
-                                            $("#getProductImage").attr('src', 'stock/'+response.product_image);
+                                            $("#getProductImage").attr('src', response);
 
-                                            // remove error text
-                                            $('.text-danger').remove();
-                                            // remove error red color and success green color
-                                            $('.form-group').removeClass('has-error').removeClass('has-success');
                                         }
                                     });// $.ajax
 
