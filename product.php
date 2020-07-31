@@ -155,6 +155,32 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="photo">
                 
+                <!-- form photo-->
+                    <form class="form-horizontal" action="php_action/editProductImage.php" method="POST" id="updateProductImageForm" enctype="multipart/form-data">
+                    <br>
+                    <div class="edit-productPhoto-message"></div>
+                        <div class="form-group">
+                            <label for="getProductImage" class="col-sm-3 control-label">Product Image</label>
+                            <div class="col-sm-9">
+                                <img src="" id="getProductImage" class="thumbnail" style="width:400px; height:250px; padding:20px">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="editProductImage" class="col-sm-3 control-label">Product Image</label>
+                            <div class="col-sm-9">
+                                <div id="kv-avatar-errors-1" class="center-block" style="width:800px;display:none"></div>
+                                <div class="kv-avatar center-block">
+                                    <input type="file" id="editProductImage" name="editProductImage" class="file-loading">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
                 </div>
                 <!-- photo -->
                 <div role="tabpanel" class="tab-pane " id="productInfo">
